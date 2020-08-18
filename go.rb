@@ -15,6 +15,11 @@ class Go < Formula
     end
   end
 
+  patch do
+    url "https://gist.githubusercontent.com/tonistiigi/290d2e7118fe6f581e336bf3553b4501/raw/eaceb186011162f3c791facf43e40876deb88f24/0001-temp-fix-for-darwin-arm64.patch"
+    sha256 "6cb191fb6fcae4f27de3d97d8c3eeb68fe49df250abc06dc0f8eb15fa6183a34"
+  end
+
   bottle do
     sha256 "36ef2e4cc3ecc84e0c1e98580a63f8d417efc8831f0c59b0a7e13d517c61353b" => :catalina
     sha256 "ea373dd668c31caa9816a5028028694425635cc3871783709381d872906fa78e" => :mojave
@@ -32,8 +37,8 @@ class Go < Formula
   # Don't update this unless this version cannot bootstrap the new version.
   resource "gobootstrap" do
     on_macos do
-      url "https://storage.googleapis.com/golang/go1.7.darwin-amd64.tar.gz"
-      sha256 "51d905e0b43b3d0ed41aaf23e19001ab4bc3f96c3ca134b48f7892485fc52961"
+      url "https://golang.org/dl/go1.15.darwin-amd64.tar.gz"
+      sha256 "8a5fb9c8587854a84957a79b9616070b63d8842d4001c3c7d86f261cd7b5ffb6"
     end
 
     on_linux do
